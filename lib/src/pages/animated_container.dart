@@ -23,8 +23,8 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
       ),
       body: Center(
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 500),
-          curve: Curves.easeInSine,
+          duration: Duration(milliseconds: 1000),
+          curve: Curves.bounceIn,
           width  : _width,
           height : _height,
           decoration: BoxDecoration(
@@ -42,12 +42,14 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           FloatingActionButton(
-          child: Icon(Icons.add),
+            heroTag: "btn1",
+            child: Icon(Icons.add),
             onPressed: _cambiarForma,
           ),
           SizedBox(width: 10.0,),
           FloatingActionButton(
-          child: Icon(Icons.sentiment_dissatisfied),
+            heroTag: "btn2",
+            child: Icon(Icons.sentiment_dissatisfied),
             onPressed: _cambiarTamanio,
           ),
         ],
